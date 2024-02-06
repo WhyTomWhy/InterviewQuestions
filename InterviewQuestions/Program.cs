@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using InterviewQuestions;
+﻿using InterviewQuestions;
 
 Console.WriteLine("Hello, World!");
 
