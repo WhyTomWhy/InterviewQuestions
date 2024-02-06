@@ -8,11 +8,11 @@ namespace InterviewQuestions
     {
         internal static void CreateAndReadData()
         {
-            var taco1 = new Taco {Cheese = "1", Meat = 2, shell = false, EverythingElse = new List<string>()};
+            var taco1 = BuildTaco();
             var dct = new Order();
-            dct.Name = "test";
+            dct.Name = "test".ToUpper();
             dct.Id = 1;
-            dct.Description = "Description";
+            dct.Description = "Description".ToUpper();
             dct.Taco = taco1;
 
             Console.WriteLine("==> Order");
@@ -24,7 +24,14 @@ namespace InterviewQuestions
             Console.WriteLine("== " + dct.Taco.Meat);
             Console.WriteLine("== " + dct.Taco.shell);
             Console.WriteLine("== " + dct.Taco.EverythingElse.First().ToUpper());
-
+        }
+        internal static Taco BuildTaco()
+        {
+            var taco = new Taco();
+            taco.Cheese = "1";
+            taco.Meat = 2;
+            taco.shell = false;
+            return taco;
         }
     }
     internal class Order
@@ -36,9 +43,9 @@ namespace InterviewQuestions
     }
     internal class Taco
     {
-        public string? Cheese { get; set; }
+        public string Cheese { get; set; }
         public int? Meat { get; set; }
         public bool? shell { get; set; }
-        public List<string>? EverythingElse { get; set; }
+        public List<string> EverythingElse { get; set; }
     }
 }
